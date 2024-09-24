@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Basic validation check
+            if (name && email && message) {
+                // Show thank you message
+                alert("Thank you, your message is submitted.");
+                // Optionally reset the form after submission
+                document.querySelector("form").reset();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+
+        // Ensure the function is bound to the form submit event
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector("form");
+            form.addEventListener("submit", submitForm);
+        });
+    </script>
+
 </head>
 <body>
     <section class="contact">
@@ -14,12 +41,12 @@
             <div class="contact-info">
                 <h2>Get in Touch</h2>
                 <p><strong>Email:</strong> support@example.com</p>
-                <p><strong>Phone:</strong> +123 456 7890</p>
-                <p><strong>Address:</strong> 1234 Bus Street, New York City, NYC</p>
+                <p><strong>Phone:</strong> 23 456 7890</p>
+                <p><strong>Address:</strong> 1234 Bus Street,chennai,Tamilnadu,india</p>
             </div>
             <div class="contact-form">
                 <h2>Contact Form</h2>
-                <form action="submitform.php" method="post">
+                <form>
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
 
